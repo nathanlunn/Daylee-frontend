@@ -16,7 +16,7 @@ export default function PostHome() {
 
   return (
     <div>
-      hello
+      {todaysPost.description}
     </div>
   )
 }
