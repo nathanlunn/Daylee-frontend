@@ -1,0 +1,30 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+.nav .nav__name {
+  width: 5rem;
+}
+.nav .nav__link {
+  text-decoration: none;
+  color: #02010A;
+  margin: 0.5rem 1rem;
+  font-family: "Padauk", sans-serif;
+}
+.nav .nav__link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  margin: 0.3rem 1rem;
+}
+.nav .nav__link--logout {
+  color: rgb(226, 61, 61);
+}
+.nav .nav__linkBox {
+  display: flex;
+  margin-right: 1rem;
+}/*# sourceMappingURL=Nav.css.map */

@@ -1,0 +1,37 @@
+@import '../variables/Variables.scss';
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  .nav__name {
+    width: 5rem;
+  }
+
+  .nav__link {
+    text-decoration: none;
+    color: $richBlack;
+    margin: .5rem 1rem;
+    font-family: 'Padauk', sans-serif;
+  }
+
+  .nav__link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    margin: .3rem 1rem;
+  }
+
+  .nav__link--logout {
+    color: rgb(226, 61, 61);
+  }
+
+  .nav__linkBox {
+    display: flex;
+    margin-right: 1rem;
+  }
+}

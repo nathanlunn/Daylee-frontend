@@ -1,0 +1,132 @@
+@import '../variables/Variables.scss';
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  } 
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.signup__spinner {
+  width: 1rem;
+  height: 1rem;
+  border: .4rem solid #f3f3f3;
+  border-top: .4rem solid black;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+  align-self: center;
+  margin-top: 4rem;
+  position: absolute;
+  top: 1.6rem;
+}
+
+.signup__error {
+  font-family: 'Oswald', sans-serif;
+  color: rgb(109, 14, 14);
+}
+
+.signup {
+  margin-top: 5rem;
+  display: flex;
+  width: 100%;
+
+  .signup__paddingContainer {
+    width: 33%
+  }
+
+  .signup__inputsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33%
+  }
+
+  .signup__title {
+    font-size: 3rem;
+    margin: .5rem 0 .5rem;
+    color: $richBlack;
+    font-family: 'Padauk', sans-serif;
+  }
+
+  .signup__input {
+    border: none;
+    border-bottom: solid 2px black; 
+    margin: .5rem 1rem;
+    font-size: 1.5rem;
+    background-color: rgba(255, 0, 0, 0);
+    color: $richBlack;
+    width: 20rem;
+  }
+  .signup__input:hover {
+    cursor: url('../assets/pen.png') 0 60, auto;
+  }
+  .signup__input:focus {
+    outline: none;
+    border-bottom: solid 3px black;
+  }
+
+  .signup__input--bio {
+    height: 5rem;
+    font-size: 1rem;
+    margin-bottom: .1rem;
+  }
+
+  .signup__bioCharacterCount {
+    align-self: flex-end;
+  }
+
+  .fa-solid:hover {
+    cursor: pointer;
+  }
+
+  .signup__submit {
+    margin-top: 2rem;
+    border: solid 2px $richBlack;
+    box-shadow: -2px 2px $richBlack;
+    font-size: 2rem;
+    font-family: 'Padauk', sans-serif;
+    padding: .1rem .5rem;
+  }
+  .signup__submit:hover {
+    cursor: pointer;
+  }
+  .signup__submit:active {
+    box-shadow: none;
+    position: relative;
+    left: -2px;
+    bottom: -2px;
+  }
+
+  .signup__pictureContainer {
+    padding: 8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .signup__findImageButtons {
+      padding: 1rem 0 2rem;
+    }
+
+    .signup__imageContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .signup__profilePicturePreview {
+      width: 10rem;
+      height: 10rem;
+      object-fit: cover;
+    }
+  }
+}
+
+.hide {
+  opacity: 0;
+}
+
+.red {
+  color: rgb(193, 38, 38);
+}

@@ -1,0 +1,86 @@
+@-webkit-keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.login__spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 0.4rem solid #f3f3f3;
+  border-top: 0.4rem solid black;
+  border-radius: 50%;
+  -webkit-animation: spinner 1.5s linear infinite;
+          animation: spinner 1.5s linear infinite;
+  align-self: center;
+  margin-top: 4rem;
+  position: absolute;
+  top: 1.6rem;
+}
+
+.login__error {
+  font-family: "Oswald", sans-serif;
+  color: rgb(109, 14, 14);
+}
+
+.login {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login .login__title {
+  font-size: 3rem;
+  margin: 0.5rem 0 2rem;
+  font-family: "Padauk", sans-serif;
+}
+.login .login__input {
+  border: none;
+  border-bottom: solid 2px black;
+  margin: 2.5rem 1rem;
+  font-size: 1.5rem;
+  background-color: rgba(255, 0, 0, 0);
+  color: #02010A;
+  width: 20rem;
+}
+.login .login__input:hover {
+  cursor: url("../assets/pen.png") 0 60, auto;
+}
+.login .login__input:focus {
+  outline: none;
+  border-bottom: solid 3px black;
+}
+.login .fa-solid:hover {
+  cursor: pointer;
+}
+.login .login__submit {
+  margin-top: 3.5rem;
+  border: solid 2px #02010A;
+  box-shadow: -2px 2px #02010A;
+  font-size: 2rem;
+  font-family: "Padauk", sans-serif;
+  padding: 0.1rem 0.5rem;
+}
+.login .login__submit:hover {
+  cursor: pointer;
+}
+.login .login__submit:active {
+  box-shadow: none;
+  position: relative;
+  left: -2px;
+  bottom: -2px;
+}
+
+.hide {
+  opacity: 0;
+}/*# sourceMappingURL=Login.css.map */

@@ -1,0 +1,64 @@
+.comment {
+  width: 80%;
+  display: flex;
+  align-items: flex-start;
+  margin: 1rem 0;
+  background-color: #d3d2d3;
+  box-shadow: -4px 4px 5px #adadad;
+  padding: 0.5rem;
+}
+.comment .comment__container {
+  width: 90%;
+  background-color: transparent;
+}
+.comment .comment__container .comment__commentorInfo {
+  background-color: transparent;
+  display: flex;
+  align-items: flex-end;
+}
+.comment .comment__container .comment__commentorInfo .comment__commentorImage {
+  background-color: transparent;
+  width: 3rem;
+  height: 3rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 0.4rem;
+}
+.comment .comment__container .comment__commentorInfo .comment__commentorName {
+  background-color: transparent;
+  font-size: 2rem;
+}
+.comment .comment__container .comment__content {
+  background-color: transparent;
+  font-size: 1.2rem;
+  font-family: "Barlow Condensed", sans-serif;
+}
+.comment .comment__upvoteContainer {
+  background-color: transparent;
+  width: 10%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.comment .comment__upvoteContainer .comment__upvoteCounter {
+  background-color: transparent;
+}
+.comment .comment__upvoteContainer .comment__upvoteButton {
+  background-color: transparent;
+  width: 2rem;
+  align-self: center;
+}
+.comment .comment__upvoteContainer .comment__upvoteButton:hover {
+  cursor: pointer;
+}
+
+.yours {
+  background-color: rgb(163, 209, 163);
+  box-shadow: -4px 4px 5px rgb(117, 148, 117);
+}
+
+.alreadyUpvoted {
+  opacity: 30%;
+}/*# sourceMappingURL=Comment.css.map */
