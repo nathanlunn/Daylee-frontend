@@ -52,10 +52,11 @@
   .profile__imageContainer {
     margin-top: .2rem;
     display: flex;
+    justify-content: center;
     
     .profile__image {
-      width: 15rem;
-      height: 15rem;
+      width: 50%;
+      height: auto;
       object-fit: cover;
     }
     .profile__imageIcon {
@@ -153,6 +154,46 @@
       }
     }
 
+  }
+
+  .profile__bioContentContainerNoEdit {
+    display: flex;
+
+    .profile__info--bio {
+      width: 15rem;
+    }
+  }
+}
+
+@media (max-width: 60rem) {
+  .profile__imageEdit {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+    .profile__changePictureContainerDud {
+      position: absolute;
+    }
+
+    .profile__changePictureContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .profile__nameContentContainer {
+    // flex-direction: column;
+    // align-items: center;
+  }
+
+  .profile__buttonContainerDud {
+    position: absolute;
+  }
+
+  .profile__bioContentContainer {
+    flex-direction: column;
+    align-items: center;
   }
 }
 

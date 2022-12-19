@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import '../styles/YourProfile.css';
 import {Image} from 'cloudinary-react';
 import axios from 'axios';
@@ -13,6 +13,7 @@ export default function YourProfile({state, setState}) {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('none');
   const [bioCharacterCount, setBioCharacterCount] = useState(state.user.bio.length);
+  const bottomRef = useRef();
 
   const uploadImage = (image) => {
     const formData = new FormData();
@@ -111,6 +112,10 @@ export default function YourProfile({state, setState}) {
       })
   };
 
+  const scrollDown = () => {
+    bottomRef.current.scrollIntoView();
+  }
+
   return (
     <div className='profile'>
       {loading && <div className='profile__spinner'></div>}
@@ -122,7 +127,7 @@ export default function YourProfile({state, setState}) {
       <div className='profile__imageContainer'>
         {changeImage ? (
           <div className='profile__imageEdit'>
-            <div className='profile__changePictureContainer hide'>
+            <div className='profile__changePictureContainer hide profile__changePictureContainerDud'>
               <input
                 className='profile__chooseNewPicture'
                 type='file'
@@ -190,7 +195,7 @@ export default function YourProfile({state, setState}) {
             <h5 className='profile__title'>name:</h5>
 
             <div className='profile__nameContentContainer'>
-            <div className='profile__buttonContainer hide'>
+              <div className='profile__buttonContainer hide profile__buttonContainerDud'>
                 <button
                   className='profile__button profile__button--cancel'
                 >cancel</button>
@@ -247,59 +252,63 @@ export default function YourProfile({state, setState}) {
         <div className='profile__bioContainer'>
           <h5 className='profile__title'>bio:</h5>
           <div class='profile__bioContentContainer'>
-          <div className='profile__buttonContainer hide'>
-                <button
-                  className='profile__button profile__button--cancel'
-                >cancel</button>
-                <button
-                  className='profile__button profile__button--confirm'
-                >confirm</button>
-              </div>
+            <div className='profile__buttonContainer hide profile__buttonContainerDud'>
+              <button
+                className='profile__button profile__button--cancel'
+              >cancel</button>
+              <button
+                className='profile__button profile__button--confirm'
+              >confirm</button>
+            </div>
 
-              <div className='profile__editBioContainer'>
-                <textarea 
-                  className='profile__changeInput profile__changeInput--bio'
-                  value={bio === undefined ? state.user.bio : bio}
-                  onChange={(e) => {
-                    setBio(e.target.value);
-                    setBioCharacterCount(e.target.value.length);
-                  }}
-                ></textarea>
-                <h3 
-                  className={bioCharacterCount > 100 ? 'profile__bioCharacterCount red' :'profile__bioCharacterCount'}
-                >{`${bioCharacterCount} / 100`}</h3>
-              </div>
+            <div className='profile__editBioContainer'>
+              <textarea 
+                className='profile__changeInput profile__changeInput--bio'
+                value={bio === undefined ? state.user.bio : bio}
+                onChange={(e) => {
+                  setBio(e.target.value);
+                  setBioCharacterCount(e.target.value.length);
+                }}
+              ></textarea>
+              <h3 
+                className={bioCharacterCount > 100 ? 'profile__bioCharacterCount red' :'profile__bioCharacterCount'}
+              >{`${bioCharacterCount} / 100`}</h3>
+            </div>
 
-              <div className='profile__buttonContainer'>
-                <button
-                  className='profile__button profile__button--cancel'
-                  onClick={() => {
-                    setBio(state.user.bio);
-                    setChangeBio(false);
-                  }}
-                >cancel</button>
-                <button
-                  className='profile__button profile__button--confirm'
-                  onClick={() => {changeProfile('bio', bio)}}
-                >confirm</button>
-              </div>
+            <div className='profile__buttonContainer'>
+              <button
+                className='profile__button profile__button--cancel'
+                onClick={() => {
+                  setBio(state.user.bio);
+                  setChangeBio(false);
+                }}
+              >cancel</button>
+              <button
+                className='profile__button profile__button--confirm'
+                onClick={() => {changeProfile('bio', bio)}}
+              >confirm</button>
+            </div>
           </div>
         </div>
       ) : (
         <div className='profile__bioContainer'>
           <h5 className='profile__title'>bio:</h5>
-          <div class='profile__bioContentContainer'>
+          <div class='profile__bioContentContainerNoEdit'>
             <i class="fa-solid fa-pen-to-square profile__icon hide"></i>
 
             <h2 className='profile__info profile__info--bio'>{state.user.bio}</h2>
 
             <i
               class="fa-solid fa-pen-to-square profile__icon"
-              onClick={() => setChangeBio(true)}
+              onClick={() => {
+                setChangeBio(true);
+                scrollDown();        
+              }}
             ></i>
           </div>
         </div>
       )}
+    <div className="bottomContainerElement" ref={bottomRef} />
     </div>
   )
 }
