@@ -158,7 +158,7 @@ export default function YourProfile({state, setState}) {
                 }}
               ></input>
               
-              <div className='profile__buttonContainer'>
+              <div className='profile__buttonContainer profile__buttonContainerMobile'>
                 <button
                   className='profile__button profile__button--cancel'
                   onClick={() => {
@@ -275,7 +275,7 @@ export default function YourProfile({state, setState}) {
               >{`${bioCharacterCount} / 100`}</h3>
             </div>
 
-            <div className='profile__buttonContainer'>
+            <div className='profile__buttonContainer profile__buttonContainerMobile'>
               <button
                 className='profile__button profile__button--cancel'
                 onClick={() => {

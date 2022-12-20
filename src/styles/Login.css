@@ -81,6 +81,18 @@
   bottom: -2px;
 }
 
+@media (max-width: 30rem) {
+  .login .login__title {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+  .login .login__input {
+    width: 13rem;
+  }
+  .login .login__submit {
+    margin-top: 1rem;
+  }
+}
 .hide {
   opacity: 0;
 }/*# sourceMappingURL=Login.css.map */

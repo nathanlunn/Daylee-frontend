@@ -109,7 +109,7 @@ export default function SignUp({state, setState}) {
           className={errorMessage === 'none' ? 'signup__error hide' : 'signup__error'}
         >{errorMessage}</h2>
 
-        <h2 className='signup__title'>Sign Up:</h2>
+        <h2 className='signup__title signup__titleDesktop'>Sign Up:</h2>
 
         <input
           className='signup__input singup__input--name'
@@ -187,6 +187,8 @@ export default function SignUp({state, setState}) {
           </div>
         </div>
       </div>
+
+      <h2 className='signup__title signup__titleMobile'>Sign Up:</h2>
     </div>
   )
 }

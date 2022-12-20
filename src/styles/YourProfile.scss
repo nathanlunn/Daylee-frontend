@@ -187,6 +187,11 @@
     // align-items: center;
   }
 
+  .profile__buttonContainerMobile {
+    display: flex;
+    flex-direction: row;
+  }
+
   .profile__buttonContainerDud {
     position: absolute;
   }

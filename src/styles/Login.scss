@@ -80,6 +80,24 @@
   }
 }
 
+@media (max-width: 30rem) {
+  .login {
+
+    .login__title {
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
+  
+    .login__input {
+      width: 13rem;
+    }
+
+    .login__submit {
+      margin-top: 1rem;
+    }
+  }
+}
+
 .hide {
   opacity: 0;
 }

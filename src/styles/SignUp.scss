@@ -33,7 +33,9 @@
   width: 100%;
 
   .signup__paddingContainer {
-    width: 33%
+    width: 33%;
+    display: flex;
+    flex-direction: column;
   }
 
   .signup__inputsContainer {
@@ -48,6 +50,11 @@
     margin: .5rem 0 .5rem;
     color: $richBlack;
     font-family: 'Padauk', sans-serif;
+  }
+
+  .signup__titleMobile {
+    opacity: 0;
+    position: absolute;
   }
 
   .signup__input {
@@ -83,6 +90,8 @@
 
   .signup__submit {
     margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 10rem;
     border: solid 2px $richBlack;
     box-shadow: -2px 2px $richBlack;
     font-size: 2rem;
@@ -119,6 +128,28 @@
       width: 10rem;
       height: 10rem;
       object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 60rem) {
+  .signup {
+    flex-direction: column-reverse;
+    align-items: center;
+
+    .signup__titleMobile {
+      opacity: 100;
+      position: relative;
+    }
+
+    .signup__titleDesktop {
+      opacity: 0;
+      position: absolute;
+    }
+
+    .signup__pictureContainer {
+      margin: 0;
+      padding: 0;
     }
   }
 }
