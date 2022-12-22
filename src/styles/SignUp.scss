@@ -38,15 +38,23 @@
     flex-direction: column;
   }
 
+  .signup__notImageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+  }
+
   .signup__inputsContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 33%
+    width: 85%;
   }
 
   .signup__title {
     font-size: 3rem;
+    width: 12rem;
     margin: .5rem 0 .5rem;
     color: $richBlack;
     font-family: 'Padauk', sans-serif;
@@ -80,6 +88,11 @@
     margin-bottom: .1rem;
   }
 
+  .signup__pickProfilePictureTitle {
+    // width: 25rem;
+    // align-self: center;
+  }
+
   .signup__bioCharacterCount {
     align-self: flex-end;
   }
@@ -109,7 +122,8 @@
   }
 
   .signup__pictureContainer {
-    padding: 8rem 2rem;
+    padding: 8rem 0;
+    width: 33%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,6 +144,12 @@
       object-fit: cover;
     }
   }
+
+  .signup__pictureContainerMobile {
+    opacity:0;
+    position: absolute;
+    pointer-events: none;
+  }
 }
 
 @media (max-width: 60rem) {
@@ -145,11 +165,25 @@
     .signup__titleDesktop {
       opacity: 0;
       position: absolute;
+      z-index: -1000;
     }
 
     .signup__pictureContainer {
       margin: 0;
       padding: 0;
+    }
+
+    .signup__pictureContainerMobile {
+      opacity:100;
+      position: relative;
+      pointer-events: all;
+      width: auto;
+    }
+    
+    .signup__pictureContainerDesktop {
+      opacity:0;
+      position: absolute;
+      pointer-events: none;
     }
   }
 }

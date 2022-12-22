@@ -10,6 +10,9 @@
 .nav .nav__name {
   width: 5rem;
 }
+.nav .nav__name:hover {
+  cursor: pointer;
+}
 .nav .nav__link {
   text-decoration: none;
   color: #02010A;

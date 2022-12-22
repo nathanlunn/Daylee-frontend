@@ -43,14 +43,21 @@
   display: flex;
   flex-direction: column;
 }
+.signup .signup__notImageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
 .signup .signup__inputsContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 33%;
+  width: 85%;
 }
 .signup .signup__title {
   font-size: 3rem;
+  width: 12rem;
   margin: 0.5rem 0 0.5rem;
   color: #02010A;
   font-family: "Padauk", sans-serif;
@@ -106,7 +113,8 @@
   bottom: -2px;
 }
 .signup .signup__pictureContainer {
-  padding: 8rem 2rem;
+  padding: 8rem 0;
+  width: 33%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,6 +133,11 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+.signup .signup__pictureContainerMobile {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
 
 @media (max-width: 60rem) {
   .signup {
@@ -138,10 +151,22 @@
   .signup .signup__titleDesktop {
     opacity: 0;
     position: absolute;
+    z-index: -1000;
   }
   .signup .signup__pictureContainer {
     margin: 0;
     padding: 0;
+  }
+  .signup .signup__pictureContainerMobile {
+    opacity: 100;
+    position: relative;
+    pointer-events: all;
+    width: auto;
+  }
+  .signup .signup__pictureContainerDesktop {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
   }
 }
 .hide {

@@ -12,6 +12,9 @@
   .nav__name {
     width: 5rem;
   }
+  .nav__name:hover {
+    cursor: pointer;
+  }
 
   .nav__link {
     text-decoration: none;

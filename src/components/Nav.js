@@ -8,7 +8,7 @@ export default function Nav({state, setState}) {
 
   return (
     <div className='nav'>
-      <img className='nav__name' src={name}/>
+      <img className='nav__name' src={name} onClick={() => {navigate('/')}}/>
       <div className='nav__linkBox'>
         <Link className='nav__link' to='/'>HOME</Link>
         {state.user.name ? (
